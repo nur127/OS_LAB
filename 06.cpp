@@ -1,3 +1,12 @@
+// Question 6 — SJF Preemptive (SRTF)
+// Write a program for Shortest Remaining Time First (SRTF) scheduling.
+// Calculate:
+// •	Completion Time 
+// •	Waiting Time 
+// •	Turnaround Time
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 

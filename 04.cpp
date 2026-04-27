@@ -1,3 +1,11 @@
+// Question 4 — FCFS Scheduling
+// Write a program to implement First Come First Serve (FCFS) CPU scheduling algorithm and calculate:
+// •	Waiting Time 
+// •	Turnaround Time 
+// •	Average Waiting Time 
+// •	Average Turnaround Time
+
+
 #include<bits/stdc++.h>
 using namespace std;
 

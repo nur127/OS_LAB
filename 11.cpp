@@ -1,3 +1,29 @@
+// Question 11 — FIFO Page Replacement
+// Write a program to implement the First-In First-Out (FIFO) page replacement algorithm.
+// The program should:
+// •	accept page reference string 
+// •	accept number of frames 
+// •	count page faults and page hits
+
+// Input :
+// 12
+// 2 3 2 1 5 2 4 5 3 2 5 2
+// 3
+
+// For Checking Belady's Anomaly
+// Input Without Belady's Anomaly : 
+// 12 
+// 1 2 3 4 1 2 5 1 2 3 4 5
+// 3
+
+// Input With Belady's Anomaly : 
+// 12 
+// 1 2 3 4 1 2 5 1 2 3 4 5
+// 4
+
+
+
+
 #include<bits/stdc++.h>
 using namespace std ;
 

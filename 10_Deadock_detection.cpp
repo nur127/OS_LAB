@@ -1,3 +1,39 @@
+// Question 9 — Banker’s Algorithm
+// Write a program to implement the Banker’s Algorithm for deadlock avoidance.
+// The program should:
+// •	take Allocation, Maximum, and Available matrices as input 
+// •	determine whether the system is in a safe state 
+// •	display the safe sequence
+
+// Input for No deadlock : 
+// 5 3 
+// 0 1 0 
+// 2 0 0
+// 3 0 3
+// 2 1 1
+// 0 0 2
+// 0 0 0 
+// 2 0 2 
+// 0 0 0
+// 1 0 0
+// 0 0 2
+// 0 0 0
+
+// Input for Deadlock :
+// 5 3 
+// 0 1 0 
+// 2 0 0
+// 3 0 3
+// 2 1 1
+// 0 0 2
+// 0 0 0 
+// 2 0 2 
+// 0 0 1
+// 1 0 0
+// 0 0 2
+// 0 0 0
+
+
 #include<bits/stdc++.h>
 using namespace std;
 

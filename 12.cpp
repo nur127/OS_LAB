@@ -1,3 +1,15 @@
+// Question 12 — LRU Page Replacement
+// Implement the Least Recently Used (LRU) page replacement algorithm.
+// Display:
+// •	frame status after each page reference 
+// •	total page faults
+
+
+// Input : 
+// 12
+// 2 3 2 1 5 2 4 5 3 2 5 2
+// 3
+
 #include<bits/stdc++.h>
 using namespace std ;
  int main(){
@@ -14,6 +26,7 @@ using namespace std ;
 
     cout<<"Enter Number of Frame : "<<endl ;   
     int f ;
+
     cin>>f;
 
     vector<int>frame;

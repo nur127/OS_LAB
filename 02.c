@@ -1,3 +1,11 @@
+// Question 2-Process
+// Write a program where:
+// •	parent prints numbers 1–5 
+// •	child prints numbers 6–10 
+// Observe execution order.
+
+
+
 #include<stdio.h>>
 #include<unistd.h>
 

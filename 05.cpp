@@ -1,75 +1,74 @@
-#include <iostream>
+// Question 5 — SJF Non-Preemptive
+// Implement Shortest Job First (Non-Preemptive) scheduling algorithm.
+// Display:
+// •	Gantt Chart 
+// •	Waiting Time 
+// •	Turnaround Time
+
+
+
+
+#include<bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int n;
-    cout << "Enter number of processes: ";
-    cin >> n;
-
-    int at[10], bt[10], ct[10], tat[10], wt[10];
-    bool done[10] = {false};
-
-    cout << "Enter AT and BT:\n";
-    for(int i = 0; i < n; i++) {
-        cout << "P" << i+1 << ": ";
-        cin >> at[i] >> bt[i];
+int main(){
+    int n ;
+    cout<<"Enter Number Of Process : \n";
+    cin>>n ; 
+    vector<int>at(n),bt(n),ct(n),tt(n),wt(n),index(n);
+    vector<bool>done(n,false);
+    cout<<"Enter AT and BT \n";
+    for(int i = 0 ; i<n ; i++){
+        cout<<"P"<<i+1 << ":";
+        cin>>at[i]>>bt[i];
     }
 
-    int time = 0, completed = 0;
+    int current_time = 0 ,completed = 0 ;
 
-    while(completed < n) {
 
-        int idx = -1;
-        int min_bt = 9999;
+    while(completed < n ){
+        int idx = -1 , min = 9999;
 
-        // find shortest job
-        for(int i = 0; i < n; i++) {
-            if(at[i] <= time && done[i] == false) {
-                if(bt[i] < min_bt) {
-                    min_bt = bt[i];
+        for(int i = 0 ; i <n ; i++){
+            if( at[i] <= current_time && done[i] == false){
+                if(bt[i] < min){
+                    min = bt[i];
                     idx = i;
                 }
             }
         }
 
-        //  CPU idle
-        if(idx == -1) {
-            time++;
+        if(idx == -1){
+            current_time++;
             continue;
         }
 
-        //  execute process
-        ct[idx] = time + bt[idx];
-        time = ct[idx];
-
+        ct[idx] = bt[idx]+current_time;
+        current_time = ct[idx];
         done[idx] = true;
-        completed++;
+        index[completed] = idx+1 ;
+        completed++; 
     }
 
-    // calculate TAT and WT
-    for(int i = 0; i < n; i++) {
-        tat[i] = ct[i] - at[i];
-        wt[i] = tat[i] - bt[i];
+    for(int i = 0 ; i < n ;i++){
+        tt[i] = ct[i] - at[i];
+        wt[i] = tt[i]-bt[i];
     }
 
-    // print table
-    cout << "\nP\tAT\tBT\tCT\tTAT\tWT\n";
+cout << "\nP\tAT\tBT\tCT\tTAT\tWT\n";
     for(int i = 0; i < n; i++) {
         cout << "P" << i+1 << "\t"
              << at[i] << "\t"
              << bt[i] << "\t"
              << ct[i] << "\t"
-             << tat[i] << "\t"
+             << tt[i] << "\t"
              << wt[i] << "\n";
     }
-
-    // 🎯 Gantt Chart (simple)
-    cout << "\nGantt Chart:\n| ";
+     cout << "\nGantt Chart:\n| ";
     for(int i = 0; i < n; i++) {
-        cout << "P" << i+1 << " | ";
+        cout << "P" << index[i] << " | ";
     }
 
     cout << endl;
 
-    return 0;
 }

@@ -1,3 +1,15 @@
+// Question 8 — Priority Scheduling
+// Write a program to implement:
+// •	Non-preemptive priority scheduling
+// or 
+// •	Preemptive priority scheduling
+// Calculate:
+// •	Completion Time 
+// •	Waiting Time 
+// •	Turnaround Time
+
+
+
 #include <bits/stdc++.h>
 using namespace std;
 
