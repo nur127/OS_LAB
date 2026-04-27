@@ -4,8 +4,12 @@
 // •	Gantt Chart 
 // •	Waiting Time 
 // •	Turnaround Time
-
-
+// Input : 
+// 4
+// 1 3 
+// 2 4
+// 1 2 
+// 4 4
 
 
 #include<bits/stdc++.h>
