@@ -11,6 +11,7 @@ int main(){
     }
     int current = 0 ,completed = 0 ;
     while(completed < n){
+        
         int idx = - 1 ,min = INT_MAX; 
 
         for(int i = 0 ; i <n ; i++){
@@ -54,6 +55,5 @@ int main(){
              << tt[i] << "\t"
              << wt[i] << "\n";
     }
-
     return 0;
 }

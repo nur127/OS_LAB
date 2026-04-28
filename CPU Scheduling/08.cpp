@@ -9,7 +9,6 @@
 // •	Turnaround Time
 
 
-
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -36,20 +35,18 @@ int main() {
 
         //  find highest priority process
         for(int i = 0; i < n; i++) {
-            if(at[i] <= time && !done[i]) {
+            if(at[i] <= time && done[i] == false) {
                 if(pr[i] < best_pr) {
                     best_pr = pr[i];
                     idx = i;
                 }
             }
         }
-
         // CPU idle
         if(idx == -1) {
             time++;
             continue;
         }
-
         // execute fully (NON-PREEMPTIVE)
         ct[idx] = time + bt[idx];
         time = ct[idx];
@@ -57,13 +54,11 @@ int main() {
         done[idx] = true;
         completed++;
     }
-
     // TAT & WT
     for(int i = 0; i < n; i++) {
         tat[i] = ct[i] - at[i];
         wt[i] = tat[i] - bt[i];
     }
-
     // output
     cout << "\nP\tAT\tBT\tPR\tCT\tTAT\tWT\n";
     cout << "--------------------------------------\n";
@@ -77,6 +72,5 @@ int main() {
              << tat[i] << "\t"
              << wt[i] << "\n";
     }
-
     return 0;
 }

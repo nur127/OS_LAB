@@ -33,7 +33,7 @@ int main() {
         bool all_done = true;
 
         for(int i = 0; i < n; i++) {
-            if(at[i] <= time && !done[i]) {
+            if(at[i] <= time && done[i] == false) {
                 all_done = false;
                 if(rt[i] > tq) {
                     time += tq;

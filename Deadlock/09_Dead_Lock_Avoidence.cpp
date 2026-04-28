@@ -46,6 +46,7 @@ int main(){
             cin>>allocation[i][j];
         }
     }
+
     // Input for Available 
     cout<<"Available Resources : ";
     for(int i = 0 ; i < r ; i++){
@@ -74,14 +75,14 @@ int main(){
                         break;
                     }
                 }
-                    if(j == r){
-                        for(int k = 0 ; k < r ; k++){
-                            available[k] += allocation[i][k];
-                        }
-                        safeSeq.push_back(i);
-                        finish[i] = true;
-                        found = true ;
-                        count++;
+                if(j == r){
+                    for(int k = 0 ; k < r ; k++){
+                        available[k] += allocation[i][k];
+                    }
+                    safeSeq.push_back(i);
+                    finish[i] = true;
+                    found = true ;
+                    count++;
                 }
 
             }
